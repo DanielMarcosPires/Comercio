@@ -115,14 +115,13 @@ def mostrar_maior_venda():
 
 print(
     """
-   
 █▄▄ █▀▀ █▀▄▀█   █░█ █ █▄░█ █▀▄ █▀█ █
 █▄█ ██▄ █░▀░█   ▀▄▀ █ █░▀█ █▄▀ █▄█ ▄
     """
 )
 
 while True:
-    controle = input("\nDeseja continuar? (s/n): ")
+    controle = input("Deseja continuar? (s/n): ")
     if controle.lower() == "s":
         print("\n=== Menu Principal ===")
         controle = input("1 - Adicionar vendedor\n2 - Adicionar produto\n3 - Mostrar produtos\n4 - Mostrar vendedores\n5 - Mostrar maior venda\n6 - Sair\nEscolha uma opção: ")
