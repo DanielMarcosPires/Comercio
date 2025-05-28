@@ -11,5 +11,5 @@ class Produto(Vendedor):
         return f'Nome do produto: {self._name} | Marca: {self._marca} | Preço: {self._price}'
     
     def extrair_dados(self):
-        return {"nome": self._name, "marca":self._marca, "price":self._price}
+        return {"nome_do_produto": self._name, "marca":self._marca, "price":self._price}
   
