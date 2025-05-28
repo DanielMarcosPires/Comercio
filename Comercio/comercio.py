@@ -15,14 +15,19 @@ class Comercio:
             return
 
         maior_valor = max(vendas)
-        indice_maior = vendas.index(maior_valor)
-        vendedor_maior_venda = self.produtos[indice_maior]
-
-
+        indices_maiores = [i for i, v in enumerate(vendas) if v == maior_valor]
+        
         print(f"\nComparação de vendas:")
         for i, venda in enumerate(vendas):
-            print(f"{i+1} - Vendedor: {self.vendedores[i]["Nome"]}: R${venda}")
+            print(f"{i+1} - Vendedor: {self.vendedores[i]['Nome']}: R${venda}")
             
         print(f"\nMaior venda: R${maior_valor}")
-        print(f"Vendedor com maior venda: {self.vendedores[indice_maior]['Nome']}")
-        print(vendedor_maior_venda)
+        
+        if len(indices_maiores) > 1:
+            print("Houve empate entre os vendedores:")
+            for indice in indices_maiores:
+                print(f"- {self.vendedores[indice]['Nome']}")
+                print(self.produtos[indice])
+        else:
+            print(f"Vendedor com maior venda: {self.vendedores[indices_maiores[0]]['Nome']}")
+            print(self.produtos[indices_maiores[0]])

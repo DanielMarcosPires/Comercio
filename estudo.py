@@ -2,11 +2,12 @@ import re #Para eu poder usar o RegEx
 from Comercio.comercio import Comercio
 from Comercio.produto import Produto
 from Comercio.vendedor import Vendedor
-
+import os
 vendedores = []
 produtos = []
 
 def adicionar_vendedor():
+    os.system("cls")
     print("\n=== Adicionar Vendedor ===")
     nome = input("Nome do vendedor: ")
     empresa = input("Empresa do vendedor: ")
@@ -24,6 +25,7 @@ def adicionar_vendedor():
     return vendedor
 
 def adicionar_produto():
+    os.system("cls")
     if not vendedores:
         print("Erro: Não há vendedores cadastrados. Cadastre um vendedor primeiro!")
         return None
@@ -60,6 +62,7 @@ def adicionar_produto():
         return None
 
 def mostrar_produtos():
+    os.system("cls")
     if not produtos:
         print("Nenhum produto cadastrado!")
         return
@@ -77,6 +80,7 @@ def mostrar_produtos():
             print("Nenhum produto cadastrado para este vendedor.")
 
 def mostrar_vendedores():
+    os.system("cls")
     if not vendedores:
         print("Nenhum vendedor cadastrado!")
         return
@@ -87,6 +91,7 @@ def mostrar_vendedores():
         print(f"{i}. {vendedor.mostrar_vendedor()}")
 
 def mostrar_maior_venda():
+    os.system("cls")
     if not vendedores:
         print("Não há vendedores cadastrados!")
         return
@@ -108,6 +113,14 @@ def mostrar_maior_venda():
     # Mostra quem vendeu mais
     comercio.maior_venda(totais)
 
+print(
+    """
+   
+█▄▄ █▀▀ █▀▄▀█   █░█ █ █▄░█ █▀▄ █▀█ █
+█▄█ ██▄ █░▀░█   ▀▄▀ █ █░▀█ █▄▀ █▄█ ▄
+    """
+)
+
 while True:
     controle = input("\nDeseja continuar? (s/n): ")
     if controle.lower() == "s":
@@ -127,6 +140,8 @@ while True:
     else:
         print("Aplicação finalizada!")
         break
+
+#===================Código antigo=========================== 
 
 # vendedor1 = Vendedor(name="Daniel",empresa="Teste")
 
